@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <link rel="stylesheets" src="/app.css">
+  <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/products"> FULLBASKET</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/products">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" id="register">
+          <a class="nav-link" href="/register">Register User</a>
+        </li>
+
+
+        <li class="nav-item" id="login">
+          <a class="nav-link" href="/login">Login User</a>
+        </li>
+
+
+        <style>
+          #cart {
+            width: 2em;
+            height: 2em;
+            margin-left: 1.5em;
+            margin-right: 1.5em;
+            margin-left: 800px;
+          }
+
+
+
+          #cart:hover {
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+
+          }
+
+          #userprofile {
+            width: 2em;
+            height: 2em;
+            margin-left: 20px;
+            border: none;
+            padding: none;
+          }
+
+          #userprofile:hover {
+            width: 1.5em;
+            height: 1.5em;
+            background-color: black;
+            color: white;
+          }
+        </style>
+
+
+        <li>
+        <li class="nav-item" id="addnewpr">
+          <a class="nav-link" href="/products/new">Add New Product</a>
+        </li>
+        </li>
+
+        <a id="cardb" href="/cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+            id="cart" viewBox="0 0 16 16">
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+          </svg>
+        </a>
+
+        <a id="userprofile" href="/viewprofile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square"
+            viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path
+              d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
+          </svg>
+        </a>
+
+
+
+      </ul>
+
+
+    </div>
+
+  </nav>
+
+
+  <div class="container">
+
+    <div class="col-12 mt-2">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="row">
+            <div class="carousel-item active card">
+              <img
+                src="https://res.cloudinary.com/djognfxr9/image/upload/v1675359978/FullBasket/61lljZ7Aa4L._SX3000__dx8efi.jpg"
+                class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item card">
+              <img
+                src="https://res.cloudinary.com/djognfxr9/image/upload/v1675359975/FullBasket/51-gWhlY6wL._SX3000__molka0.jpg"
+                class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item card">
+              <img
+                src="https://res.cloudinary.com/djognfxr9/image/upload/v1675359977/FullBasket/618pXiTCh4L._SX3000__fv7avl.jpg"
+                class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item card">
+              <img
+                src="https://res.cloudinary.com/djognfxr9/image/upload/v1675359977/FullBasket/61_GduPIncL._SX3000__lucmo5.jpg"
+                class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item card">
+              <img
+                src="https://res.cloudinary.com/djognfxr9/image/upload/v1675359979/FullBasket/71v3maagAhL._SX3000__ash8bu.jpg"
+                class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item card">
+              <img
+                src="https://res.cloudinary.com/djognfxr9/image/upload/v1675359987/FullBasket/91w-odJIfKL._SX3000__iic8lu.jpg"
+                class="d-block w-100" alt="...">
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <style>
+    #img {
+      width: 100px;
+      height: 100px;
+    }
+
+    #img1 {
+      width: 200px;
+      height: 100px;
+    }
+
+    body {
+      background-color: white;
+    }
+
+    .card {
+      background-color: white;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+  <div class="row">
+    <div class="container col-6">
+      <h2>Mobile Phones</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col-3">
+          <div class="card col-12" id="prod">
+            <img class="card col-6" src="<%=prod[0].images[0].url%>" class="card-img-top" alt="..." id="img">
+            <a class="btn btn-info" href="/products/show/<%=prod[0]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prod[0].name%>
+              </h5>
+              <p class="card-text">
+                <%=prod[0].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prod[1].images[0].url%>" class="card-img-top" alt="..." id="img">
+            <a class="btn btn-info" href="/products/show/<%=prod[1]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prod[1].name%>
+              </h5>
+              <p class="card-text">
+                <%=prod[1].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prod[0].images[0].url%>" class="card-img-top" alt="..." id="img">
+            <a class="btn btn-info" href="/products/show/<%=prod[2]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prod[2].name%>
+              </h5>
+              <p class="card-text">
+                <%=prod[2].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prod[3].images[0].url%>" class="card-img-top" alt="..." id="img">
+            <a class="btn btn-info" href="/products/show/<%=prod[3]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prod[3].name%>
+              </h5>
+              <p class="card-text">
+                <%=prod[3].price%>..
+              </p>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-info" href="/products/mobile">Show More</a>
+      </div>
+
+    </div>
+    <div class="container col-6">
+      <h2>TV</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col-2">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodt[0].images[0].url%>" class="card-img-top" alt="..." id="img1">
+            <a class="btn btn-info" href="/products/show/<%=prodt[0]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodt[0].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodt[0].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodt[1].images[0].url%>" class="card-img-top" alt="..." id="img1">
+            <a class="btn btn-info" href="/products/show/<%=prodt[1]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodt[1].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodt[1].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodt[2].images[0].url%>" class="card-img-top" alt="..." id="img1">
+            <a class="btn btn-info" href="/products/show/<%=prodt[2]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodt[2].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodt[2].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodt[3].images[0].url%>" class="card-img-top" alt="..." id="img1">
+            <a class="btn btn-info" href="/products/show/<%=prodt[3]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodt[3].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodt[3].price%>..
+              </p>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-info" href="/products/tv">Show More</a>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="row">
+    <div class="container col-6">
+      <h2>Clothes</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodc[0].images[0].url%>" class="card-img-top" alt="..." id="img">
+            <a class="btn btn-info" href="/products/show/<%=prodc[0]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodc[0].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodc[0].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodc[1].images[0].url%>" class="card-img-top" alt="..." id="img">
+            <a class="btn btn-info" href="/products/show/<%=prodc[1]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodc[1].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodc[1].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodc[2].images[0].url%>" class="card-img-top" alt="..." id="img">
+            <a class="btn btn-info" href="/products/show/<%=prodc[2]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodc[2].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodc[2].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodc[3].images[0].url%>" class="card-img-top" alt="..." id="img">
+            <a class="btn btn-info" href="/products/show/<%=prodc[3]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodc[3].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodc[3].price%>..
+              </p>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-info" href="/products/clothes">Show More</a>
+      </div>
+    </div>
+    <div class="container col-6">
+      <h2>Food</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col-2">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodf[0].images[0].url%>" class="card-img-top" alt="..." id="img1">
+            <a class="btn btn-info" href="/products/show/<%=prodf[0]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodf[0].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodf[0].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodf[1].images[0].url%>" class="card-img-top" alt="..." id="img1">
+            <a class="btn btn-info" href="/products/show/<%=prodf[1]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodf[1].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodf[1].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodf[2].images[0].url%>" class="card-img-top" alt="..." id="img1">
+            <a class="btn btn-info" href="/products/show/<%=prodf[2]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodf[2].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodf[2].price%>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card col-12">
+            <img class="card col-6" src="<%=prodf[3].images[0].url%>" class="card-img-top" alt="..." id="img1">
+            <a class="btn btn-info" href="/products/show/<%=prodf[3]._id%>">View</a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=prodf[3].name%>
+              </h5>
+              <p class="card-text">
+                <%=prodf[3].price%>..
+              </p>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-info" href="/products/food">Show More</a>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>
