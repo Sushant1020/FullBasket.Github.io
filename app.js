@@ -74,6 +74,8 @@ app.use((req, res, next) => {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.listen(3000, () => {
+const port = process.env.PORT;
+
+app.listen(port || 3000, () => {
   console.log("Serving on port 3000");
 });
