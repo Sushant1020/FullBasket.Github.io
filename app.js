@@ -44,11 +44,6 @@ const sessionConfig = {
   },
 };
 app.use(session(sessionConfig));
-app.use(flash());
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -59,7 +54,6 @@ passport.deserializeUser(User.deserializeUser());
 const productRoutes = require("./routes/products");
 const userRoutes = require("./routes/users");
 
-app.use(flash());
 app.use("/products", productRoutes);
 app.use("/", userRoutes);
 

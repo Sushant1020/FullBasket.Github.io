@@ -17,17 +17,13 @@ module.exports.home =
     const prodt = []; //for tv
     for (prode of product) {
       if (prode.category === "mobile") prod.push(prode);
-    }
-    for (prode of product) {
+
       if (prode.category === "clothes") prodc.push(prode);
-    }
-    for (prode of product) {
+
       if (prode.category === "food") prodf.push(prode);
-    }
-    for (prode of product) {
+
       if (prode.category === "electronics") prodel.push(prode);
-    }
-    for (prode of product) {
+
       if (prode.category === "tv") prodt.push(prode);
     }
 
