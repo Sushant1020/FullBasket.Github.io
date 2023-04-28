@@ -1,4 +1,6 @@
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -13,9 +15,8 @@ const methodOverride = require("method-override");
 const mongoSanitize = require("express-mongo-sanitize");
 const ExpressError = require("./utils/ExpressError");
 
-const app1 = 0;
-const url = process.env.DBUrl;
-var urlstring = "" + url;
+const DBUrl = process.env.DB_URL;
+const urlstring = "" + DBUrl;
 
 mongoose.connect(urlstring, {
   useNewUrlParser: true,
