@@ -17,8 +17,9 @@ const ExpressError = require("./utils/ExpressError");
 
 const app1 = 0;
 const url = process.env.DBUrl;
+var urlstring = "" + url;
 
-mongoose.connect(url, {
+mongoose.connect(urlstring, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
