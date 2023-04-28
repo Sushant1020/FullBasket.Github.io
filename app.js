@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
@@ -11,11 +15,8 @@ const methodOverride = require("method-override");
 const mongoSanitize = require("express-mongo-sanitize");
 const ExpressError = require("./utils/ExpressError");
 
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
 const app1 = 0;
-var url = process.env.DBUrl;
+const url = process.env.DBUrl;
 
 mongoose.connect(url, {
   useNewUrlParser: true,
