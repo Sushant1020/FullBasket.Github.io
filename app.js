@@ -10,7 +10,10 @@ const User = require("./models/users");
 const methodOverride = require("method-override");
 const mongoSanitize = require("express-mongo-sanitize");
 const ExpressError = require("./utils/ExpressError");
-require("dotenv").config();
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 const url = process.env.DB_URL;
 mongoose.connect(url, {
