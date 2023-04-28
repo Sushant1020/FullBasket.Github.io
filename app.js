@@ -14,7 +14,7 @@ const ExpressError = require("./utils/ExpressError");
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
-
+const app1 = 0;
 const url = process.env.DB_URL;
 mongoose.connect(url, {
   useNewUrlParser: true,
