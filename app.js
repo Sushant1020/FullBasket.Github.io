@@ -69,8 +69,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
-const port = process.env.PORT;
-
-app.listen(port || 3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Serving on port 3000");
 });
