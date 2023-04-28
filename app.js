@@ -15,13 +15,13 @@ const methodOverride = require("method-override");
 const mongoSanitize = require("express-mongo-sanitize");
 const ExpressError = require("./utils/ExpressError");
 
-const DBUrl = process.env.DB_URL;
-const urlstring = "" + DBUrl;
-
-mongoose.connect(urlstring, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://sushant2040:MARvel3060@cluster0.69l9e31.mongodb.net/?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
