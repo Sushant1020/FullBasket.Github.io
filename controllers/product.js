@@ -31,11 +31,8 @@ module.exports.home =
       const randnum = Math.floor(Math.random() * 10) + 10;
       return randnum;
     }
-    req.currentUser = req.session.User;
-    const currentUser = req.currentUser;
     res.render("products/home", {
       product,
-      currentUser,
       rand,
       prod,
       prodc,
@@ -47,28 +44,22 @@ module.exports.home =
 
 module.exports.allitems = catchAsync(async (req, res) => {
   const product = await Product.find({});
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
 
-  res.render("products/index", { product, currentUser });
+  res.render("products/index", { product });
 });
 
 module.exports.showproducts = async (req, res) => {
   const product = await Product.findById(req.params.id);
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (!product) {
     req.flash("error", "Cannot Find That Product!");
     return res.redirect("/products");
   }
 
-  res.render("products/show", { product, currentUser });
+  res.render("products/show", { product });
 };
 
 module.exports.newproduct = async (req, res) => {
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
-  res.render("products/new", { currentUser });
+  res.render("products/new");
 };
 
 module.exports.addproduct = async (req, res, next) => {
@@ -90,13 +81,11 @@ module.exports.renderEditForm = async (req, res) => {
   const { id } = req.params;
   product.author = req.user._id;
   const author = product.author;
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (!product) {
     req.flash("error", "Cannot Find That Product!");
     return res.redirect("/products");
   }
-  res.render("products/edit", { product, currentUser, author });
+  res.render("products/edit", { product, author });
 };
 
 module.exports.updateProduct = async (req, res) => {
@@ -105,8 +94,6 @@ module.exports.updateProduct = async (req, res) => {
   const product = await Product.findByIdAndUpdate(id, { ...req.body.product });
   const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
   product.images.push(...imgs);
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (req.body.deleteImages) {
     for (let filename of req.body.deleteImages) {
       await cloudinary.uploader.destroy(filename);
@@ -118,67 +105,56 @@ module.exports.updateProduct = async (req, res) => {
   }
   await product.save();
   req.flash("success", "Successfully Updated product");
-  res.redirect(`/products/show/${(product._id, currentUser)}`);
+  res.redirect(`/products/show/${product._id}`);
 };
 
 module.exports.showtv = async (req, res) => {
   const product = await Product.find({});
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (!product) {
     req.flash("error", "Cannot Find That Product!");
     return res.redirect("/products");
   }
 
-  res.render("products/tv", { product, currentUser });
+  res.render("products/tv", { product });
 };
 
 module.exports.showfood = async (req, res) => {
   const product = await Product.find({});
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (!product) {
     req.flash("error", "Cannot Find That Product!");
     return res.redirect("/products");
   }
 
-  res.render("products/food", { product, currentUser });
+  res.render("products/food", { product });
 };
 
 module.exports.showclothes = async (req, res) => {
   const product = await Product.find({});
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (!product) {
     req.flash("error", "Cannot Find That Product!");
     return res.redirect("/products");
   }
 
-  res.render("products/clothes", { product, currentUser });
+  res.render("products/clothes", { product });
 };
 
 module.exports.showelectronics = async (req, res) => {
   const product = await Product.find({});
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (!product) {
     req.flash("error", "Cannot Find That Product!");
     return res.redirect("/products");
   }
 
-  res.render("products/electronics", { product, currentUser });
+  res.render("products/electronics", { product });
 };
 
 module.exports.showfurniture = async (req, res) => {
   const product = await Product.find({});
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (!product) {
     req.flash("error", "Cannot Find That Product!");
     return res.redirect("/products");
   }
-
-  res.render("products/furniture", { product, currentUser });
+  res.render("products/furniture", { product });
 };
 
 module.exports.searchresult =
@@ -191,10 +167,8 @@ module.exports.searchresult =
       if (prod.name.equals(params)) {
         arr.push(prod);
       }
+      res.render("products/search", { arr });
     }
-    req.currentUser = req.session.User;
-    const currentUser = req.currentUser;
-    res.render("products/search", { arr });
   });
 
 module.exports.inputreviews = async (req, res) => {
@@ -213,12 +187,10 @@ module.exports.inputreviews = async (req, res) => {
 
 module.exports.showmobile = async (req, res) => {
   const product = await Product.find({});
-  req.currentUser = req.session.User;
-  const currentUser = req.currentUser;
   if (!product) {
     req.flash("error", "Cannot Find That Product!");
     return res.redirect("/products");
   }
 
-  res.render("products/mobile", { product, currentUser });
+  res.render("products/mobile", { product });
 };

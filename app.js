@@ -27,11 +27,9 @@ const app = express();
 
 app.engine("ejs", ejsMate);
 
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: false }));
+
 app.use(flash());
-app.use(mongoSanitize());
 
 const sessionConfig = {
   secret: "thisshouldbeabettersecret!",
@@ -43,6 +41,7 @@ const sessionConfig = {
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
 };
+
 app.use(session(sessionConfig));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -51,22 +50,24 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req, res, next) => {
+  console.log(req.session);
+  res.locals.currentUser = req.session.user_id;
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
+
 const productRoutes = require("./routes/products");
 const userRoutes = require("./routes/users");
 
 app.use("/products", productRoutes);
 app.use("/", userRoutes);
 
-app.use((req, res, next) => {
-  console.log(req.query);
-  res.locals.currentUser = req.user;
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
-  next();
-});
-
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "public")));
 
 const port = process.env.PORT;
 
