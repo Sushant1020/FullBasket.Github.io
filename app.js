@@ -15,8 +15,8 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 const app1 = 0;
-var url =
-  "mongodb+srv://sushant2040:VIShnu158@cluster0.69l9e31.mongodb.net/?retryWrites=true&w=majority";
+var url = process.env.DBUrl;
+
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
